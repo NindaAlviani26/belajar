@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>Konvert Suhu</title>
+	<script type="text/javascript">
+	function proses(){
+		var h=document.hp.input.value;
+		var i=document.hp.awal.value;
+		var j=document.hp.konvert.value;
+		if(i=="cel" && j=="celi"){
+			document.hp.hasil.value=h;
+		}else if(i=="cel" && j=="rea"){
+			document.hp.hasil.value=h*0.8;
+		}else if(i=="cel"  && j=="fahre"){
+			document.hp.hasil.value=(h*1.8)+32;
+		}else if(i=="cel" && j=="k"){
+			document.hp.hasil.value=h+273.15;
+		}else if(i=="re" && j=="celi"){
+			document.hp.hasil.value=h*1.25;
+		}else if(i=="re" && j=="rea"){
+			document.hp.hasil.value=h;
+		}else if(i=="re" && j=="fahre"){
+			document.hp.hasil.value=(h*2.25)+32;
+		}else if(i=="re" && j=="k"){
+			document.hp.hasil.value=h+32;
+		}else if(i=="fah" && j=="celi"){
+			document.hp.hasil.value=(h-32)/1.8;
+		}else if(i=="fah" && j=="rea"){
+			document.hp.hasil.value=(4/9) * (h-32);
+		}else if(i=="fah" && j=="fahre"){
+			document.hp.hasil.value=h;
+		}else if(i=="fah" && j=="k"){
+			document.hp.hasil.value=(5/9) * (h-32)+273;
+		}else if(i=="kel" && j=="celi"){
+			document.hp.hasil.value=h-273;
+		}else if(i=="kel" && j=="re"){
+			document.hp.hasil.value=(4/5) * (h-273);
+		}else if(i=="kel" && j=="fahre"){
+			document.hp.hasil.value=(4/5) * (h-273)+32;
+		}else if(i=="kel" && j=="k"){
+			document.hp.hasil.value=h;
+		}
+			
+	}
+	</script>
+</head>
+<body>
+	<form name="hp">
+	<table>
+	<tr>
+		<td colspan="2" align="center">Konvert Suhu</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Masukkan Suhu Jumlah Suhu </td>
+		<td><input type="text" name="input" placeholder="suhu awal"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Suhu Awal </td>
+		<td><select name="awal">
+			<option value="cel">Celcius</option>
+			<option value="re">Reamur</option>
+			<option value="fah">Fahrenheit</option>
+			<option value="kel">Kelvin</option>
+		</select></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Konvert ke </td>
+		<td><select name="konvert">
+			<option value="celi">Celcius</option>
+			<option value="rea">Reamur</option>
+			<option value="fahre">Fahrenheit</option>
+			<option value="k">Kelvin</option>
+		</select></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="button" value="OK" name="klik" onclick="proses()"><input type="reset" value="Hapus" name="delet"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Hasil </td>
+		<td><input type="text" name="hasil" placeholder="Hasil"></td>
+		<td></td>
+	</tr>
+	</table>
+	</form>
+</body>
+</html>
